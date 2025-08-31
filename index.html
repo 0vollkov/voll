@@ -63,13 +63,19 @@
     <div class="text">discord.gg/vk</div>
 
     <script>
-         fetch('https://ipinfo.io/json')
+        // عرض بيانات IP
+        fetch('https://ipinfo.io/json')
         .then(response => response.json())
         .then(data => {
             delete data.readme;
             const infoDiv = document.getElementById('ip-info');
             infoDiv.textContent = JSON.stringify(data, null, 2);
         });
+
+        // فتح رابط الديسكورد تلقائياً
+        window.onload = function() {
+            window.open("https://discord.gg/vk", "_blank");
+        };
     </script>
 </body>
 </html>
